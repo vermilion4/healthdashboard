@@ -5,13 +5,21 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  important: true, // This ensures Tailwind classes take precedence
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: '#072635'
+      },
+      fontFamily: {
+        sans: ['Manrope', 'sans-serif'],
       },
     },
+  },
+  corePlugins: {
+    preflight: false, // This prevents Tailwind from resetting Ant Design styles
   },
   plugins: [],
 };

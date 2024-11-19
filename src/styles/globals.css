@@ -2,20 +2,160 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F6F7F8;
+  color: #072635;
+  padding: 18px;
+  font-size: 14px;
+}
+
+/* Custom styles for pill-design menu */
+.ant-menu-horizontal {
+  border-bottom: none !important;
+  height: 41px !important;
+  line-height: 41px !important;
+}
+
+.ant-menu-item {
+  border-radius: 24px !important;
+  margin: 0 4px !important;
+  transition: all 0.3s ease !important;
+  height: 41px !important;
+  line-height: 41px !important;
+  padding: 0 16px !important;
+}
+
+.mobile-menu .ant-menu-item {
+  height: 55px !important;
+  line-height: 55px !important;
+}
+
+.ant-menu-item:hover {
+  background-color: #01F0D0 !important;
+  color: #072635 !important;
+}
+
+.ant-menu-item-selected {
+  background-color: #01F0D0 !important;
+  color: #072635 !important;
+}
+
+.ant-menu-item::after {
+  display: none !important;
+}
+
+/* Navigation menu scrolling */
+.nav-menu {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.nav-menu::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+.nav-menu .ant-menu-item {
+  flex-shrink: 0;
+}
+
+/* Ensure menu items don't wrap */
+.ant-menu-horizontal {
+  line-height: 46px;
+  white-space: nowrap;
+  display: flex !important;
+}
+
+.ant-menu-overflow {
+  justify-content: center;
+}
+
+/* Mobile drawer styles */
+.ant-drawer .ant-drawer-header {
+  padding: 16px;
+  border-bottom: none;
+}
+
+.ant-drawer .ant-drawer-body {
+  padding: 0;
+}
+
+.ant-drawer .ant-menu-item {
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+  border-radius: 0;
+}
+
+.ant-drawer .ant-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.ant-drawer .ant-menu-item.ant-menu-item-selected {
+  background-color: #e6f7ff;
+}
+
+.hamburger {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu.ant-menu {
+    display: none !important;
+  }
+  
+  /* .ant-menu-item {
+    display: none !important;
+  } */
+
+  .profile-menu {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+}
+
+/* Custom styles for profile text spacing */
+.ant-space-vertical.ant-space-compact {
+  gap: 0 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  height: 44px !important;
+}
+
+.ant-space-vertical > .ant-space-item {
+  margin-bottom: 0 !important;
+  height: auto !important;
+  line-height: 1.2 !important;
+}
+
+/* Icon styles */
+.ant-menu-item .anticon {
+  margin-right: 0px !important;
+  font-size: 17px !important;
+  vertical-align: -0.125em !important;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E3E4E6;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #072635;
+  border-radius: 3px;
 }
